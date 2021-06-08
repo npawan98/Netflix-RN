@@ -77,7 +77,8 @@ const MovieDetailsScreen = () => {
                         {/* picker to select season */}
                         <Picker
                         // to access state
-                        style={{color: "white"}}
+                        dropdownIconColor="white"
+                        style={{color: "white",width: 150}}
                             selectedValue={currentSeason.name} //here value is season1
                             onValueChange={(itemValue, itemIndex) =>{
                                 setCurrentSeason(movie.seasons.items[itemIndex])
