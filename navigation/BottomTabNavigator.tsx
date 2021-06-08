@@ -17,31 +17,40 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Home"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Home"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color={color}/>, //here name is the icon name form expo
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="ComingSoon"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="video-library" size={24} color={color}/> ,
         }}
       />
-    </BottomTab.Navigator>
+      <BottomTab.Screen
+        name="Search"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <MaterialIcons name="search" size={24} color={color}/> ,
+        }}
+      />
+      <BottomTab.Screen
+        name="Downloads"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <AntDesign name="download" size={24} color={color}/> ,
+        }}
+      />
+    </BottomTab.Navigator>  
   );
 }
 
-// You can explore the built-in icon families and icons on the web at
-// https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
