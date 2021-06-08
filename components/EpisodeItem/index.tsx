@@ -2,18 +2,21 @@ import { AntDesign } from '@expo/vector-icons';
 import React from 'react'
 import { Image } from 'react-native';
 import { View, Text } from '../../components/Themed'
+import { Episode } from '../../types';
 import styles from './styles'
 
 interface EpisodeItemProps{
 
-    episode:{
-        id: string,
-        title: string,
-        poster:string,
-        duration:string,
-        plot:string,
-        video:string,
-    }
+    // episode:{
+    //     id: string,
+    //     title: string,
+    //     poster:string,
+    //     duration:string,
+    //     plot:string,
+    //     video:string,
+    // }
+    // or
+    episode:Episode
 }
 
 const EpisodeItem = (props:EpisodeItemProps) => {

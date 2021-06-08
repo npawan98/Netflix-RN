@@ -6,6 +6,7 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import EpisodeItem from '../../components/EpisodeItem';
 import { Picker } from '@react-native-picker/picker';
+import VideoPlayer from '../../components/VideoPlayer';
 
 const firstSeason = movie.seasons.items[0]
 const firstEpisode = movie.seasons.items[0].episodes.items[0]
@@ -13,13 +14,14 @@ const firstEpisode = movie.seasons.items[0].episodes.items[0]
 const MovieDetailsScreen = () => {
 
     const [currentSeason,setCurrentSeason] = useState(firstSeason)
+    const [currentEpisode,setCurrentEpisode] = useState(firstSeason.episodes.items[0])
 
     const seasonNames = movie.seasons.items.map(season =>season.name);
     return (
         <View>
-            <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
+            {/* <Image style={styles.image} source={{ uri: firstEpisode.poster }} /> */}
 
-
+            <VideoPlayer episode ={currentEpisode}/>
             <FlatList
                 style={{ marginBottom: 210 }}
                 // data={firstSeason.episodes.items}
