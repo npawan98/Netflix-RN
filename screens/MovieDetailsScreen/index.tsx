@@ -4,6 +4,7 @@ import styles from './styles'
 import movie from '../../assets/data/movie'
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import EpisodeItem from '../../components/EpisodeItem';
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0]
 
@@ -11,7 +12,9 @@ const MovieDetailsScreen = () => {
     return (
         <View>
             <Image style={styles.image} source={{uri:firstEpisode.poster}}/>
+            
                 <View style={{padding:12}}>
+                <EpisodeItem episode={firstEpisode}/>
                     <Text style={styles.title}>{movie.title}</Text>
                     <View style={{flexDirection:"row"}}>
                         <Text style={styles.match}>98% match</Text>
