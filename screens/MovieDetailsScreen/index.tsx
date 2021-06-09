@@ -95,7 +95,12 @@ const MovieDetailsScreen = () => {
                 )}
 
                 renderItem={({ item }) => (
-                    <EpisodeItem episode={item} />
+                    <EpisodeItem 
+                    episode={item} 
+                    onPress={(episode)=>{
+                        console.log(episode)
+                        setCurrentEpisode(episode)
+                    }}/>
                 )}
             />
 
